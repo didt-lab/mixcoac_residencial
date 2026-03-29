@@ -282,14 +282,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('contactForm').addEventListener('submit', handleSubmit);
   document.getElementById('modalForm').addEventListener('submit', handleSubmit);
 
-  // --- Scroll reveal animations ---
+  // --- Scroll reveal animations (bidirectional) ---
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal--visible');
-        observer.unobserve(entry.target);
-      }
+      entry.target.classList.toggle('reveal--visible', entry.isIntersecting);
     });
   }, { threshold: 0.15 });
 
