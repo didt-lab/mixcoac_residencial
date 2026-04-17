@@ -50,7 +50,10 @@
       <h1 class="hero__title">Exclusivas Casas en Venta en Mixcoac, CDMX</h1>
       <p class="hero__text">El lugar donde la historia y la modernidad conviven. Descubre un conjunto privado de 8 residencias únicas e independientes con acabados premium.</p>
       <p class="hero__price">Desde <span>$7.4 MDP</span></p>
-      <button class="btn btn--primary open-modal">Agendar Visita</button>
+      <div class="hero__buttons">
+        <button class="btn btn--primary open-modal">Agendar Visita</button>
+        <button class="btn btn--outline open-brochure-modal">Descargar Brochure</button>
+      </div>
     </div>
   </section>
 
@@ -254,6 +257,7 @@
                 </ul>
               </div>
             </div>
+            <p class="casas__price">Desde <strong>$7.8 MDP</strong></p>
             <button class="btn btn--primary open-modal">Más Información</button>
           </div>
         </div>
@@ -318,6 +322,7 @@
                 </ul>
               </div>
             </div>
+            <p class="casas__price">Desde <strong>$8 MDP</strong></p>
             <button class="btn btn--primary open-modal">Más Información</button>
           </div>
         </div>
@@ -382,6 +387,7 @@
                 </ul>
               </div>
             </div>
+            <p class="casas__price">Desde <strong>$7.4 MDP</strong></p>
             <button class="btn btn--primary open-modal">Más Información</button>
           </div>
         </div>
@@ -609,6 +615,36 @@
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
       <img src="" alt="Imagen ampliada" class="img-modal__img" id="imgModalImg">
+    </div>
+  </div>
+
+  <!-- Modal Brochure -->
+  <div class="modal" id="brochureModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="brochureModalClose" aria-label="Cerrar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+      </div>
+      <h3 class="modal__title">Descarga nuestro Brochure</h3>
+      <p class="modal__subtitle">Déjanos tus datos para enviarte información exclusiva y descargar el brochure del proyecto.</p>
+      <form class="contacto__form" id="brochureForm">
+        <div class="form__group">
+          <label for="brochure-nombre">Nombre completo *</label>
+          <input type="text" id="brochure-nombre" name="nombre" required placeholder="Tu nombre">
+        </div>
+        <div class="form__group">
+          <label for="brochure-email">Correo electrónico *</label>
+          <input type="email" id="brochure-email" name="email" required placeholder="tu@email.com">
+        </div>
+        <div class="form__group">
+          <label for="brochure-telefono">Teléfono *</label>
+          <input type="tel" id="brochure-telefono" name="telefono" required placeholder="+52 55 1234 5678">
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Descargar Brochure</button>
+      </form>
     </div>
   </div>
 

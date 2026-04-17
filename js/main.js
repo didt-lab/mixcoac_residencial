@@ -282,6 +282,62 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('contactForm').addEventListener('submit', handleSubmit);
   document.getElementById('modalForm').addEventListener('submit', handleSubmit);
 
+  // --- Brochure Modal ---
+  const brochureModal = document.getElementById('brochureModal');
+  const brochureModalClose = document.getElementById('brochureModalClose');
+  const openBrochureBtns = document.querySelectorAll('.open-brochure-modal');
+
+  const openBrochureModal = () => {
+    brochureModal.classList.add('modal--open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeBrochureModal = () => {
+    brochureModal.classList.remove('modal--open');
+    document.body.style.overflow = '';
+  };
+
+  openBrochureBtns.forEach(btn => btn.addEventListener('click', openBrochureModal));
+  brochureModalClose.addEventListener('click', closeBrochureModal);
+  brochureModal.querySelector('.modal__overlay').addEventListener('click', closeBrochureModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && brochureModal.classList.contains('modal--open')) {
+      closeBrochureModal();
+    }
+  });
+
+  document.getElementById('brochureForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    if (!validateForm(form)) return;
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Procesando...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      // Trigger PDF download
+      const link = document.createElement('a');
+      link.href = 'assets/Greco_Booklet_Marzo_2026.pdf';
+      link.download = 'Mixcoac_Residencial_Brochure.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      btn.textContent = '¡Descarga iniciada!';
+      btn.style.background = '#27ae60';
+      form.reset();
+
+      setTimeout(() => {
+        btn.textContent = 'Descargar Brochure';
+        btn.style.background = '';
+        btn.disabled = false;
+        closeBrochureModal();
+      }, 2000);
+    }, 1000);
+  });
+
   // --- Scroll reveal animations (bidirectional) ---
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
