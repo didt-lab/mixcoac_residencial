@@ -302,4 +302,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   featureEls.forEach(el => featureObserver.observe(el));
 
+  // --- Configuración: hover interactivo markers ↔ tarjetas ---
+  const casaCards = document.querySelectorAll('.configuracion__card[data-casa]');
+  const casaMarkers = document.querySelectorAll('.configuracion__marker[data-casa]');
+
+  function activateCasa(num) {
+    casaCards.forEach(c => c.classList.toggle('is-active', c.dataset.casa === num));
+    casaMarkers.forEach(m => m.classList.toggle('is-active', m.dataset.casa === num));
+  }
+
+  function deactivateAll() {
+    casaCards.forEach(c => c.classList.remove('is-active'));
+    casaMarkers.forEach(m => m.classList.remove('is-active'));
+  }
+
+  casaCards.forEach(card => {
+    card.addEventListener('mouseenter', () => activateCasa(card.dataset.casa));
+    card.addEventListener('mouseleave', deactivateAll);
+  });
+
+  casaMarkers.forEach(marker => {
+    marker.addEventListener('mouseenter', () => activateCasa(marker.dataset.casa));
+    marker.addEventListener('mouseleave', deactivateAll);
+  });
+
 });

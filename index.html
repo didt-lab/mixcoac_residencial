@@ -12,15 +12,6 @@
 </head>
 <body>
 
-  <!-- Barra superior teléfono -->
-  <div class="top-bar">
-    <div class="container">
-      <a href="tel:+525544643146" class="top-bar__btn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Llamar
-      </a>
-    </div>
-  </div>
 
   <!-- Header / Navbar -->
   <header class="header" id="header">
@@ -57,7 +48,8 @@
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <h1 class="hero__title">Exclusivas Casas en Venta en Mixcoac, CDMX</h1>
-      <p class="hero__text">El lugar donde la historia y la modernidad conviven. Descubre un conjunto privado de 8 residencias únicas e independientes con acabados premium desde <strong>$7.4 MDP</strong>.</p>
+      <p class="hero__text">El lugar donde la historia y la modernidad conviven. Descubre un conjunto privado de 8 residencias únicas e independientes con acabados premium.</p>
+      <p class="hero__price">Desde <span>$7.4 MDP</span></p>
       <button class="btn btn--primary open-modal">Agendar Visita</button>
     </div>
   </section>
@@ -70,32 +62,32 @@
           <h2 class="section__title section__title--left">Vive todos los días con los ojos del primer día</h2>
           <p class="section__text">Mixcoac es un legado vibrante. Remembrado por Octavio Paz, este barrio combina la tradición del siglo XX con una arquitectura contemporánea que ofrece independencia y libertad. Este proyecto cuenta con una opción de hogar única para tu estilo de vida.</p>
 
-          <div class="proyecto__features">
-            <div class="feature reveal-feature" style="--delay: 0">
-              <div class="feature__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-              <h3 class="feature__title">8 Casas Únicas</h3>
-            </div>
-            <div class="feature reveal-feature" style="--delay: 1">
-              <div class="feature__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-              </div>
-              <h3 class="feature__title">2 a 3 Cajones de Estacionamiento</h3>
-            </div>
-            <div class="feature reveal-feature" style="--delay: 2">
-              <div class="feature__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3 class="feature__title">Roofgarden Privado</h3>
-            </div>
-            <div class="feature reveal-feature" style="--delay: 3">
-              <div class="feature__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3 class="feature__title">Seguridad: Videovigilancia Integrada</h3>
-            </div>
-          </div>
+          <ul class="proyecto__bullets">
+            <li class="reveal-feature" style="--delay: 0">
+              <svg class="bullet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>8 Casas en Conjunto<br><span class="proyecto__bullets-sub">Tipo 'Townhouse'</span></span>
+            </li>
+            <li class="reveal-feature" style="--delay: 1">
+              <svg class="bullet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <span>3 Casas Tipo<br><span class="proyecto__bullets-sub">— A, B y C —</span></span>
+            </li>
+            <li class="reveal-feature" style="--delay: 2">
+              <svg class="bullet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Greco 48, Mixcoac<br><span class="proyecto__bullets-sub">Benito Juárez, CDMX</span></span>
+            </li>
+            <li class="reveal-feature" style="--delay: 3">
+              <svg class="bullet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7"/><path d="M9 22V12h6v10"/><rect x="1" y="9" width="22" height="13" rx="1"/></svg>
+              <span>3 Pisos, 2 Recámaras, 2.5 Baños<br><span class="proyecto__bullets-sub">2 a 3 cajones estacionamiento</span></span>
+            </li>
+            <li class="reveal-feature" style="--delay: 4">
+              <svg class="bullet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Video vigilancia</span>
+            </li>
+            <li class="reveal-feature" style="--delay: 5">
+              <svg class="bullet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Entrega · Julio 2025</span>
+            </li>
+          </ul>
         </div>
 
         <div class="proyecto__slider">
@@ -116,6 +108,93 @@
       </div>
     </div>
   </section>
+
+  <!-- Configuración del Proyecto -->
+  <section class="section section--alt configuracion" id="configuracion">
+    <div class="container">
+      <h2 class="section__title reveal reveal--scale">Configuración del Proyecto</h2>
+      <!-- Tipos resumen -->
+      <div class="configuracion__tipos reveal">
+        <p>Tipo A: Casas No. 1, 2 y 3</p>
+        <p>Tipo B: Casa No. 4</p>
+        <p>Tipo C: Casas No. 5, 6, 7 y 8</p>
+      </div>
+
+      <div class="configuracion__layout reveal">
+        <!-- Columna izquierda: Casas 1–4 -->
+        <div class="configuracion__col">
+          <div class="configuracion__card reveal-feature" style="--delay: 0" data-casa="1">
+            <h3 class="configuracion__num">1</h3>
+            <p><strong>137.58</strong> m² interiores</p>
+            <p><strong>45.86</strong> m² rooftop</p>
+            <p><strong>2</strong> cajones de auto</p>
+          </div>
+          <div class="configuracion__card reveal-feature" style="--delay: 1" data-casa="2">
+            <h3 class="configuracion__num">2</h3>
+            <p><strong>145.17</strong> m² interiores</p>
+            <p><strong>48.39</strong> m² rooftop</p>
+            <p><strong>2</strong> cajones de auto</p>
+          </div>
+          <div class="configuracion__card reveal-feature" style="--delay: 2" data-casa="3">
+            <h3 class="configuracion__num">3</h3>
+            <p><strong>155.55</strong> m² interiores</p>
+            <p><strong>51.85</strong> m² rooftop</p>
+            <p><strong>2</strong> cajones de auto</p>
+          </div>
+          <div class="configuracion__card reveal-feature" style="--delay: 3" data-casa="4">
+            <h3 class="configuracion__num">4</h3>
+            <p><strong>137.68</strong> m² interiores</p>
+            <p><strong>57.15</strong> m² rooftop</p>
+            <p><strong>1</strong> cajón de auto</p>
+          </div>
+        </div>
+
+        <!-- Centro: imagen con markers interactivos -->
+        <div class="configuracion__img">
+          <div class="configuracion__map">
+            <img src="assets/images/planos/configuracion_img.png" alt="Configuración del conjunto — 8 casas entre Calle El Greco y Calle Chilpa" loading="lazy">
+            <span class="configuracion__marker" data-casa="1" style="top:17%; left:23%">1</span>
+            <span class="configuracion__marker" data-casa="2" style="top:28%; left:26%">2</span>
+            <span class="configuracion__marker" data-casa="3" style="top:40%; left:33%">3</span>
+            <span class="configuracion__marker" data-casa="4" style="top:52%; left:40%">4</span>
+            <span class="configuracion__marker" data-casa="5" style="top:22%; left:53%">5</span>
+            <span class="configuracion__marker" data-casa="6" style="top:18%; left:60%">6</span>
+            <span class="configuracion__marker" data-casa="7" style="top:38%; left:67%">7</span>
+            <span class="configuracion__marker" data-casa="8" style="top:26%; left:74%">8</span>
+          </div>
+        </div>
+
+        <!-- Columna derecha: Casas 5–8 -->
+        <div class="configuracion__col">
+          <div class="configuracion__card reveal-feature" style="--delay: 4" data-casa="5">
+            <h3 class="configuracion__num">5</h3>
+            <p><strong>127.95</strong> m² interiores</p>
+            <p><strong>42.65</strong> m² rooftop</p>
+            <p><strong>3</strong> cajones de auto</p>
+          </div>
+          <div class="configuracion__card reveal-feature" style="--delay: 5" data-casa="6">
+            <h3 class="configuracion__num">6</h3>
+            <p><strong>130.20</strong> m² interiores</p>
+            <p><strong>43.40</strong> m² rooftop</p>
+            <p><strong>3</strong> cajones de auto</p>
+          </div>
+          <div class="configuracion__card reveal-feature" style="--delay: 6" data-casa="7">
+            <h3 class="configuracion__num">7</h3>
+            <p><strong>126.84</strong> m² interiores</p>
+            <p><strong>42.28</strong> m² rooftop</p>
+            <p><strong>3</strong> cajones de auto</p>
+          </div>
+          <div class="configuracion__card reveal-feature" style="--delay: 7" data-casa="8">
+            <h3 class="configuracion__num">8</h3>
+            <p><strong>126.96</strong> m² interiores</p>
+            <p><strong>42.32</strong> m² rooftop</p>
+            <p><strong>3</strong> cajones de auto</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Casas -->
   <section class="section section--alt casas" id="casas">
@@ -356,10 +435,10 @@
 
       <div class="avance__slider reveal">
         <div class="avance__track" id="avanceTrack">
-          <div class="avance__slide"><img src="https://placehold.co/800x500/F5F3F0/1A1A1A?text=Avance+1" alt="Avance de obra 1" loading="lazy"></div>
-          <div class="avance__slide"><img src="https://placehold.co/800x500/F5F3F0/1A1A1A?text=Avance+2" alt="Avance de obra 2" loading="lazy"></div>
-          <div class="avance__slide"><img src="https://placehold.co/800x500/F5F3F0/1A1A1A?text=Avance+3" alt="Avance de obra 3" loading="lazy"></div>
-          <div class="avance__slide"><img src="https://placehold.co/800x500/F5F3F0/1A1A1A?text=Avance+4" alt="Avance de obra 4" loading="lazy"></div>
+          <div class="avance__slide"><img src="assets/images/obra/obra_1.webp" alt="Avance de obra 1" loading="lazy"></div>
+          <div class="avance__slide"><img src="assets/images/obra/obra_2.webp" alt="Avance de obra 2" loading="lazy"></div>
+          <div class="avance__slide"><img src="assets/images/obra/obra_3.webp" alt="Avance de obra 3" loading="lazy"></div>
+          <div class="avance__slide"><img src="assets/images/obra/obra_5.webp" alt="Avance de obra 4" loading="lazy"></div>
         </div>
         <button class="avance__btn avance__btn--prev" id="avancePrev" aria-label="Anterior">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -532,6 +611,11 @@
       <img src="" alt="Imagen ampliada" class="img-modal__img" id="imgModalImg">
     </div>
   </div>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/525544643146?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Mixcoac%20Residencial" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Enviar mensaje por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

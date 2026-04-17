@@ -4,7 +4,15 @@
       "Bash(python:*)",
       "Bash(mkdir:*)",
       "WebFetch(domain:liveamana.com)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(file assets/images/planos/configuracion_img.jpg)",
+      "Bash(identify assets/images/planos/configuracion_img.jpg)",
+      "Bash(python -c \"from PIL import Image; img=Image.open\\('assets/images/planos/configuracion_img.jpg'\\); print\\(img.size\\)\")",
+      "Bash(powershell -command \"[System.Drawing.Image]::FromFile\\(\\(Resolve-Path 'assets/images/planos/configuracion_img.jpg'\\)\\).Width, [System.Drawing.Image]::FromFile\\(\\(Resolve-Path 'assets/images/planos/configuracion_img.jpg'\\)\\).Height\")"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "code-review-graph"
+  ]
 }
