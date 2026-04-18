@@ -1438,6 +1438,13 @@ button {
   margin-bottom: 16px;
 }
 
+.modal__logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .modal__title {
   font-family: var(--font-heading);
   font-size: 32px;
@@ -1529,12 +1536,36 @@ button {
 /* Mobile */
 @media (max-width: 768px) {
   :root {
+    --header-height: 130px;
+    --header-height-expanded: 130px;
+  }
+
+  .header--scrolled {
     --header-height: 60px;
-    --header-height-expanded: 80px;
+  }
+
+  .header__inner {
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .header--scrolled .header__inner {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .header__hamburger {
     display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header--scrolled .header__hamburger {
+    position: static;
+    transform: none;
   }
 
   .header__nav {
@@ -1625,7 +1656,11 @@ button {
   }
 
   .header__logo-img {
-    height: 60px;
+    height: 120px;
+  }
+
+  .header--scrolled .header__logo-img {
+    height: 45px;
   }
 
   .hero {
