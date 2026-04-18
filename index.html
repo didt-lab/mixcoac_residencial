@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/rm_logo.png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -20,6 +21,9 @@
         <img src="assets/images/rm_logo.png" alt="Mixcoac Residencial" class="header__logo-img">
       </a>
       <nav class="header__nav" id="nav">
+        <div class="header__nav-logo">
+          <img src="assets/images/rm_logo.png" alt="Mixcoac Residencial">
+        </div>
         <ul class="header__menu">
           <li><a href="#inicio" class="header__link">Inicio</a></li>
           <li><a href="#proyecto" class="header__link">Proyecto</a></li>
@@ -29,6 +33,21 @@
           <li><a href="#ubicacion" class="header__link">Ubicación</a></li>
           <li><a href="#contacto" class="header__link">Contacto</a></li>
         </ul>
+        <div class="header__nav-footer">
+          <div class="header__nav-contact">
+            <p><a href="tel:+525544643146">+52 55 4464 3146</a></p>
+            <p>Colonia Mixcoac, CDMX</p>
+            <p>Lun - Sáb: 9:00 - 18:00</p>
+          </div>
+          <div class="header__nav-social">
+            <a href="https://www.facebook.com/p/Mixcoac-Residencial-100089172941721/" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social-link social-link--disabled">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
       </nav>
       <button class="header__hamburger" id="hamburger" aria-label="Abrir menú">
         <span></span>
@@ -41,7 +60,7 @@
   <!-- Hero / Inicio -->
   <section class="hero" id="inicio">
     <div class="hero__slides">
-      <img src="assets/images/hero_banner.png" alt="Mixcoac Residencial" class="hero__bg hero__bg--active">
+      <img src="assets/images/hero_banner.webp" alt="Mixcoac Residencial" class="hero__bg hero__bg--active">
       <img src="assets/images/slider_description/Patio y Cielo.webp" alt="Patio y Cielo" class="hero__bg">
       <img src="assets/images/slider_description/EstanciaChilpa.webp" alt="Estancia Chilpa" class="hero__bg">
     </div>
@@ -123,76 +142,84 @@
         <p>Tipo C: Casas No. 5, 6, 7 y 8</p>
       </div>
 
-      <div class="configuracion__layout reveal">
-        <!-- Columna izquierda: Casas 1–4 -->
-        <div class="configuracion__col">
-          <div class="configuracion__card reveal-feature" style="--delay: 0" data-casa="1">
-            <h3 class="configuracion__num">1</h3>
-            <p><strong>137.58</strong> m² interiores</p>
-            <p><strong>45.86</strong> m² rooftop</p>
-            <p><strong>2</strong> cajones de auto</p>
-          </div>
-          <div class="configuracion__card reveal-feature" style="--delay: 1" data-casa="2">
-            <h3 class="configuracion__num">2</h3>
-            <p><strong>145.17</strong> m² interiores</p>
-            <p><strong>48.39</strong> m² rooftop</p>
-            <p><strong>2</strong> cajones de auto</p>
-          </div>
-          <div class="configuracion__card reveal-feature" style="--delay: 2" data-casa="3">
-            <h3 class="configuracion__num">3</h3>
-            <p><strong>155.55</strong> m² interiores</p>
-            <p><strong>51.85</strong> m² rooftop</p>
-            <p><strong>2</strong> cajones de auto</p>
-          </div>
-          <div class="configuracion__card reveal-feature" style="--delay: 3" data-casa="4">
-            <h3 class="configuracion__num">4</h3>
-            <p><strong>137.68</strong> m² interiores</p>
-            <p><strong>57.15</strong> m² rooftop</p>
-            <p><strong>1</strong> cajón de auto</p>
+      <!-- Imagen con markers interactivos -->
+      <div class="configuracion__img reveal">
+        <div class="configuracion__map">
+          <img src="assets/images/planos/configuracion_img.png" alt="Configuración del conjunto — 8 casas entre Calle El Greco y Calle Chilpa" loading="lazy">
+          <span class="configuracion__marker" data-casa="1" style="top:17%; left:23%">1</span>
+          <span class="configuracion__marker" data-casa="2" style="top:28%; left:26%">2</span>
+          <span class="configuracion__marker" data-casa="3" style="top:40%; left:33%">3</span>
+          <span class="configuracion__marker" data-casa="4" style="top:52%; left:40%">4</span>
+          <span class="configuracion__marker" data-casa="5" style="top:22%; left:53%">5</span>
+          <span class="configuracion__marker" data-casa="6" style="top:18%; left:60%">6</span>
+          <span class="configuracion__marker" data-casa="7" style="top:38%; left:67%">7</span>
+          <span class="configuracion__marker" data-casa="8" style="top:26%; left:74%">8</span>
+        </div>
+      </div>
+
+      <!-- Slider de cards -->
+      <div class="configuracion__slider reveal">
+        <button class="configuracion__arrow configuracion__arrow--prev" aria-label="Anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="configuracion__slider-viewport">
+          <div class="configuracion__slider-track">
+            <div class="configuracion__card" data-casa="1">
+              <h3 class="configuracion__num">1</h3>
+              <p><strong>137.58</strong> m² interiores</p>
+              <p><strong>45.86</strong> m² rooftop</p>
+              <p><strong>2</strong> cajones de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="2">
+              <h3 class="configuracion__num">2</h3>
+              <p><strong>145.17</strong> m² interiores</p>
+              <p><strong>48.39</strong> m² rooftop</p>
+              <p><strong>2</strong> cajones de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="3">
+              <h3 class="configuracion__num">3</h3>
+              <p><strong>155.55</strong> m² interiores</p>
+              <p><strong>51.85</strong> m² rooftop</p>
+              <p><strong>2</strong> cajones de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="4">
+              <h3 class="configuracion__num">4</h3>
+              <p><strong>137.68</strong> m² interiores</p>
+              <p><strong>57.15</strong> m² rooftop</p>
+              <p><strong>1</strong> cajón de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="5">
+              <h3 class="configuracion__num">5</h3>
+              <p><strong>127.95</strong> m² interiores</p>
+              <p><strong>42.65</strong> m² rooftop</p>
+              <p><strong>3</strong> cajones de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="6">
+              <h3 class="configuracion__num">6</h3>
+              <p><strong>130.20</strong> m² interiores</p>
+              <p><strong>43.40</strong> m² rooftop</p>
+              <p><strong>3</strong> cajones de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="7">
+              <h3 class="configuracion__num">7</h3>
+              <p><strong>126.84</strong> m² interiores</p>
+              <p><strong>42.28</strong> m² rooftop</p>
+              <p><strong>3</strong> cajones de auto</p>
+            </div>
+            <div class="configuracion__card" data-casa="8">
+              <h3 class="configuracion__num">8</h3>
+              <p><strong>126.96</strong> m² interiores</p>
+              <p><strong>42.32</strong> m² rooftop</p>
+              <p><strong>3</strong> cajones de auto</p>
+            </div>
           </div>
         </div>
-
-        <!-- Centro: imagen con markers interactivos -->
-        <div class="configuracion__img">
-          <div class="configuracion__map">
-            <img src="assets/images/planos/configuracion_img.png" alt="Configuración del conjunto — 8 casas entre Calle El Greco y Calle Chilpa" loading="lazy">
-            <span class="configuracion__marker" data-casa="1" style="top:17%; left:23%">1</span>
-            <span class="configuracion__marker" data-casa="2" style="top:28%; left:26%">2</span>
-            <span class="configuracion__marker" data-casa="3" style="top:40%; left:33%">3</span>
-            <span class="configuracion__marker" data-casa="4" style="top:52%; left:40%">4</span>
-            <span class="configuracion__marker" data-casa="5" style="top:22%; left:53%">5</span>
-            <span class="configuracion__marker" data-casa="6" style="top:18%; left:60%">6</span>
-            <span class="configuracion__marker" data-casa="7" style="top:38%; left:67%">7</span>
-            <span class="configuracion__marker" data-casa="8" style="top:26%; left:74%">8</span>
-          </div>
-        </div>
-
-        <!-- Columna derecha: Casas 5–8 -->
-        <div class="configuracion__col">
-          <div class="configuracion__card reveal-feature" style="--delay: 4" data-casa="5">
-            <h3 class="configuracion__num">5</h3>
-            <p><strong>127.95</strong> m² interiores</p>
-            <p><strong>42.65</strong> m² rooftop</p>
-            <p><strong>3</strong> cajones de auto</p>
-          </div>
-          <div class="configuracion__card reveal-feature" style="--delay: 5" data-casa="6">
-            <h3 class="configuracion__num">6</h3>
-            <p><strong>130.20</strong> m² interiores</p>
-            <p><strong>43.40</strong> m² rooftop</p>
-            <p><strong>3</strong> cajones de auto</p>
-          </div>
-          <div class="configuracion__card reveal-feature" style="--delay: 6" data-casa="7">
-            <h3 class="configuracion__num">7</h3>
-            <p><strong>126.84</strong> m² interiores</p>
-            <p><strong>42.28</strong> m² rooftop</p>
-            <p><strong>3</strong> cajones de auto</p>
-          </div>
-          <div class="configuracion__card reveal-feature" style="--delay: 7" data-casa="8">
-            <h3 class="configuracion__num">8</h3>
-            <p><strong>126.96</strong> m² interiores</p>
-            <p><strong>42.32</strong> m² rooftop</p>
-            <p><strong>3</strong> cajones de auto</p>
-          </div>
+        <button class="configuracion__arrow configuracion__arrow--next" aria-label="Siguiente">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="configuracion__slider-dots">
+          <button class="configuracion__dot configuracion__dot--active" data-slide="0"></button>
+          <button class="configuracion__dot" data-slide="1"></button>
         </div>
       </div>
     </div>
@@ -218,7 +245,24 @@
             <div class="casas__img-slider">
               <div class="casas__img-track">
                 <div class="casas__img-slide"><img src="assets/images/planos/tipo-a.png" alt="Planos Casa Tipo A" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/plano1.webp" alt="Plano 1 - Tipo A" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/plano2.webp" alt="Plano 2 - Tipo A" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/plano3.webp" alt="Plano 3 - Tipo A" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/pano4.webp" alt="Plano 4 - Tipo A" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/FachadaGreco.webp" alt="Fachada Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/FachadaGreco2.webp" alt="Fachada Greco 2" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/SalaGreco.webp" alt="Sala Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/ComedorGreco.webp" alt="Comedor Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/CocinaGreco.webp" alt="Cocina Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/RecamaraGreco.webp" alt="Recámara Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo A/RoofGreco.webp" alt="Roof Garden Greco" class="casas__zoomable" loading="lazy"></div>
               </div>
+              <button class="casas__img-btn casas__img-btn--prev" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="casas__img-btn casas__img-btn--next" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
             </div>
             <p class="casas__disclaimer">*Imágenes con fines ilustrativos, sujeto a cambios sin previo aviso.</p>
           </div>
@@ -270,9 +314,17 @@
             <div class="casas__img-slider">
               <div class="casas__img-track">
                 <div class="casas__img-slide"><img src="assets/images/planos/tipo-b.png" alt="Planos Casa Tipo B" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/plano1.webp" alt="Plano 1 - Tipo B" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/plano2.webp" alt="Plano 2 - Tipo B" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/plano3.webp" alt="Plano 3 - Tipo B" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/plano4.webp" alt="Plano 4 - Tipo B" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/FachadaGreco.webp" alt="Fachada Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/FachadaGreco2.webp" alt="Fachada Greco 2" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/SalaGreco.webp" alt="Sala Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/ComedorGreco.webp" alt="Comedor Greco" class="casas__zoomable" loading="lazy"></div>
                 <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/CocinaGreco.webp" alt="Cocina Greco" class="casas__zoomable" loading="lazy"></div>
                 <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/RecamaraGreco.webp" alt="Recámara Greco" class="casas__zoomable" loading="lazy"></div>
-                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/SalaGreco.webp" alt="Sala Greco" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo B/RoofGreco.webp" alt="Roof Garden Greco" class="casas__zoomable" loading="lazy"></div>
               </div>
               <button class="casas__img-btn casas__img-btn--prev" aria-label="Anterior">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -335,8 +387,13 @@
             <div class="casas__img-slider">
               <div class="casas__img-track">
                 <div class="casas__img-slide"><img src="assets/images/planos/tipo-c.png" alt="Planos Casa Tipo C" class="casas__zoomable" loading="lazy"></div>
-                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/EstacionamientoChilpa.webp" alt="Estacionamiento Chilpa" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/plano1.webp" alt="Plano 1 - Tipo C" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/plano2.webp" alt="Plano 2 - Tipo C" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/plano3.webp" alt="Plano 3 - Tipo C" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/plano4.webp" alt="Plano 4 - Tipo C" class="casas__zoomable" loading="lazy"></div>
                 <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/EstanciaChilpa.webp" alt="Estancia Chilpa" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/CuartoChilpa.webp" alt="Cuarto Chilpa" class="casas__zoomable" loading="lazy"></div>
+                <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/EstacionamientoChilpa.webp" alt="Estacionamiento Chilpa" class="casas__zoomable" loading="lazy"></div>
                 <div class="casas__img-slide"><img src="assets/images/slide_casas/Tipo C/RoofChilpa.webp" alt="Roof Chilpa" class="casas__zoomable" loading="lazy"></div>
               </div>
               <button class="casas__img-btn casas__img-btn--prev" aria-label="Anterior">
@@ -401,34 +458,114 @@
       <h2 class="section__title reveal reveal--scale">Materialidad y Acabados</h2>
       <p class="section__subtitle reveal">Estética honesta y contemporánea.</p>
 
-      <div class="acabados__grid reveal reveal--scale">
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/concreto_aparente.png" alt="Concreto Aparente" loading="lazy"></div>
-          <span class="acabado__name">Concreto Aparente</span>
+      <!-- Bloque 1: Combinación de acabados -->
+      <div class="acabados__showcase reveal">
+        <div class="acabados__showcase-grid">
+          <div class="acabados__showcase-item acabados__showcase-item--main">
+            <img src="assets/images/acabados/bloque1/materiales1.webp" alt="Combinación de materiales 1" class="casas__zoomable" loading="lazy">
+          </div>
+          <div class="acabados__showcase-item">
+            <img src="assets/images/acabados/bloque1/materiales2.webp" alt="Combinación de materiales 2" class="casas__zoomable" loading="lazy">
+          </div>
+          <div class="acabados__showcase-item">
+            <img src="assets/images/acabados/bloque1/materiales3.webp" alt="Combinación de materiales 3" class="casas__zoomable" loading="lazy">
+          </div>
         </div>
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/madera_roble.jpg" alt="Madera Roble" loading="lazy"></div>
-          <span class="acabado__name">Madera Roble</span>
+      </div>
+
+      <!-- Bloque 2: Menú interactivo de acabados -->
+      <div class="acabados__menu reveal">
+        <div class="acabados__tabs">
+          <button class="acabados__tab acabados__tab--active" data-acabado="estancias">Estancias y Recámaras</button>
+          <button class="acabados__tab" data-acabado="estacionamientos">Estacionamientos</button>
+          <button class="acabados__tab" data-acabado="escaleras">Escaleras y Servicios</button>
+          <button class="acabados__tab" data-acabado="banos">Baños</button>
+          <button class="acabados__tab" data-acabado="especiales">Piezas Especiales</button>
         </div>
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/aluminio_teka.jpg" alt="Aluminio Teka" loading="lazy"></div>
-          <span class="acabado__name">Aluminio Teka</span>
+
+        <div class="acabados__panel acabados__panel--active" id="acabado-estancias">
+          <div class="acabados__panel-layout">
+            <div class="acabados__panel-img">
+              <img src="assets/images/acabados/bloque2/acabado_estancias_y_recamaras.webp" alt="Acabados en estancias y recámaras" class="casas__zoomable" loading="lazy">
+            </div>
+            <div class="acabados__panel-info">
+              <h3>Estancias y Recámaras</h3>
+              <p class="acabados__panel-tipo">Tipo Madera</p>
+              <ul class="acabados__panel-list">
+                <li>Pisos de madera natural</li>
+                <li>Acabados cálidos y elegantes</li>
+                <li>Diseño contemporáneo</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/marmol_giogia.jpg" alt="Mármol Gioia" loading="lazy"></div>
-          <span class="acabado__name">Mármol Gioia</span>
+
+        <div class="acabados__panel" id="acabado-estacionamientos">
+          <div class="acabados__panel-layout">
+            <div class="acabados__panel-img">
+              <img src="assets/images/acabados/bloque2/acabados_estacionamientos.webp" alt="Acabados en estacionamientos" class="casas__zoomable" loading="lazy">
+            </div>
+            <div class="acabados__panel-info">
+              <h3>Estacionamientos</h3>
+              <p class="acabados__panel-tipo">Tipo Petros y Basaltos</p>
+              <ul class="acabados__panel-list">
+                <li>Superficies de alta resistencia</li>
+                <li>Acabados en piedra natural</li>
+                <li>Durabilidad y estética</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/aplanado_blanco.jpg" alt="Aplanado Blanco" loading="lazy"></div>
-          <span class="acabado__name">Aplanado Blanco</span>
+
+        <div class="acabados__panel" id="acabado-escaleras">
+          <div class="acabados__panel-layout">
+            <div class="acabados__panel-img">
+              <img src="assets/images/acabados/bloque2/escaleras_y_servicios.webp" alt="Acabados en escaleras y servicios" class="casas__zoomable" loading="lazy">
+            </div>
+            <div class="acabados__panel-info">
+              <h3>Escaleras y Servicios</h3>
+              <p class="acabados__panel-tipo">Tipo Petros, Basaltos y Granitos</p>
+              <ul class="acabados__panel-list">
+                <li>Piedra natural de alto tráfico</li>
+                <li>Combinación de texturas</li>
+                <li>Resistencia y elegancia</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/aplanado_cemento.jpg" alt="Aplanado Cemento" loading="lazy"></div>
-          <span class="acabado__name">Aplanado Cemento</span>
+
+        <div class="acabados__panel" id="acabado-banos">
+          <div class="acabados__panel-layout">
+            <div class="acabados__panel-img">
+              <img src="assets/images/acabados/bloque2/acabados_de_baños.webp" alt="Acabados en baños" class="casas__zoomable" loading="lazy">
+            </div>
+            <div class="acabados__panel-info">
+              <h3>Baños</h3>
+              <p class="acabados__panel-tipo">Tipo Basaltos, Mármoles y Granitos</p>
+              <ul class="acabados__panel-list">
+                <li>Mármoles selectos</li>
+                <li>Granitos de primera calidad</li>
+                <li>Acabados premium</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="acabado">
-          <div class="acabado__swatch"><img src="assets/images/acabados/acero.webp" alt="Acero / Lámina Negra" loading="lazy"></div>
-          <span class="acabado__name">Acero / Lámina Negra</span>
+
+        <div class="acabados__panel" id="acabado-especiales">
+          <div class="acabados__panel-layout">
+            <div class="acabados__panel-img">
+              <img src="assets/images/acabados/bloque2/piezas_especiales.webp" alt="Piezas especiales" class="casas__zoomable" loading="lazy">
+            </div>
+            <div class="acabados__panel-info">
+              <h3>Piezas Especiales</h3>
+              <p class="acabados__panel-tipo">Gran Formato</p>
+              <ul class="acabados__panel-list">
+                <li>Piezas de gran formato</li>
+                <li>Diseños exclusivos</li>
+                <li>Acabados de alta gama</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

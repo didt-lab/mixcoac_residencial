@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('header__hamburger--active');
     nav.classList.toggle('header__nav--open');
+    header.classList.toggle('header--menu-open', nav.classList.contains('header__nav--open'));
     document.body.style.overflow = nav.classList.contains('header__nav--open') ? 'hidden' : '';
   });
 
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('header__hamburger--active');
       nav.classList.remove('header__nav--open');
+      header.classList.remove('header--menu-open');
       document.body.style.overflow = '';
     });
   });
@@ -336,6 +338,87 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBrochureModal();
       }, 2000);
     }, 1000);
+  });
+
+  // --- Configuracion slider ---
+  const confTrack = document.querySelector('.configuracion__slider-track');
+  const confDotsContainer = document.querySelector('.configuracion__slider-dots');
+  const confPrev = document.querySelector('.configuracion__arrow--prev');
+  const confNext = document.querySelector('.configuracion__arrow--next');
+  const confCards = confTrack.querySelectorAll('.configuracion__card');
+  let confCurrent = 0;
+
+  const getCardsPerView = () => window.innerWidth > 768 ? 4 : 2;
+
+  const getMaxSlide = () => {
+    const perView = getCardsPerView();
+    return Math.ceil(confCards.length / perView) - 1;
+  };
+
+  const buildDots = () => {
+    const total = getMaxSlide() + 1;
+    confDotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'configuracion__dot' + (i === confCurrent ? ' configuracion__dot--active' : '');
+      dot.dataset.slide = i;
+      dot.addEventListener('click', () => goToConfSlide(i));
+      confDotsContainer.appendChild(dot);
+    }
+  };
+
+  const goToConfSlide = (index) => {
+    const max = getMaxSlide();
+    confCurrent = Math.max(0, Math.min(index, max));
+    const perView = getCardsPerView();
+    const gap = 12;
+    const viewportW = confTrack.parentElement.offsetWidth;
+    const cardW = (viewportW - (perView - 1) * gap) / perView;
+    const offset = confCurrent * perView * (cardW + gap);
+    confTrack.style.transform = `translateX(-${offset}px)`;
+    confDotsContainer.querySelectorAll('.configuracion__dot').forEach((d, i) => {
+      d.classList.toggle('configuracion__dot--active', i === confCurrent);
+    });
+  };
+
+  confPrev.addEventListener('click', () => goToConfSlide(confCurrent - 1));
+  confNext.addEventListener('click', () => goToConfSlide(confCurrent + 1));
+
+  // Swipe support
+  let confStartX = 0;
+  confTrack.addEventListener('touchstart', (e) => { confStartX = e.touches[0].clientX; }, { passive: true });
+  confTrack.addEventListener('touchend', (e) => {
+    const diff = confStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goToConfSlide(confCurrent + 1);
+      else goToConfSlide(confCurrent - 1);
+    }
+  });
+
+  // Rebuild dots on resize
+  let confResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(confResizeTimer);
+    confResizeTimer = setTimeout(() => {
+      confCurrent = 0;
+      buildDots();
+      goToConfSlide(0);
+    }, 200);
+  });
+
+  buildDots();
+
+  // --- Acabados tabs ---
+  const acabadosTabs = document.querySelectorAll('.acabados__tab');
+  const acabadosPanels = document.querySelectorAll('.acabados__panel');
+
+  acabadosTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      acabadosTabs.forEach(t => t.classList.remove('acabados__tab--active'));
+      acabadosPanels.forEach(p => p.classList.remove('acabados__panel--active'));
+      tab.classList.add('acabados__tab--active');
+      document.getElementById('acabado-' + tab.dataset.acabado).classList.add('acabados__panel--active');
+    });
   });
 
   // --- Scroll reveal animations (bidirectional) ---
