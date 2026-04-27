@@ -542,6 +542,13 @@ button {
   font-weight: 700;
 }
 
+.configuracion__price {
+  margin-top: 8px !important;
+  color: var(--color-accent) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
 
 .configuracion__map {
   position: relative;
