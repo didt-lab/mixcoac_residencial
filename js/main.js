@@ -324,7 +324,51 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.getElementById('contactForm').addEventListener('submit', handleSubmit);
-  document.getElementById('modalForm').addEventListener('submit', handleSubmit);
+
+  document.getElementById('modalForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    if (!validateForm(form)) return;
+
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    const fields = {
+      nombre: form.querySelector('[name="nombre"]').value,
+      email: form.querySelector('[name="email"]').value,
+      telefono: form.querySelector('[name="telefono"]').value,
+      mensaje: form.querySelector('[name="mensaje"]')?.value || ''
+    };
+
+    sendLeadData(fields, 'Agendar Visita - Mixcoac Residencial')
+      .then(results => {
+        const anyOk = results.some(r => r.status === 'fulfilled');
+        if (anyOk) {
+          btn.textContent = 'Enviado';
+          btn.style.background = '#27ae60';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+            if (modal.classList.contains('modal--open')) closeModal();
+          }, 2000);
+        } else {
+          throw new Error('all failed');
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Error al enviar';
+        btn.style.background = '#c0392b';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 2000);
+      });
+  });
 
   // --- Brochure Modal ---
   const brochureModal = document.getElementById('brochureModal');
