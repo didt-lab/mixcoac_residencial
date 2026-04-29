@@ -256,29 +256,72 @@ document.addEventListener('DOMContentLoaded', () => {
     return valid;
   };
 
+  const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/contacto@ilodesarrollos.com';
+  const ZAPIER_URL = 'https://hooks.zapier.com/hooks/catch/23176459/uvicaar/';
+
+  const sendLeadData = (fields, subject) => {
+    const formData = new FormData();
+    Object.entries(fields).forEach(([k, v]) => formData.append(k, v));
+    formData.append('_subject', subject);
+    formData.append('_captcha', 'false');
+
+    return Promise.allSettled([
+      fetch(FORMSUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      }),
+      fetch(ZAPIER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...fields, _subject: subject })
+      })
+    ]);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     if (!validateForm(form)) return;
 
-    // Simular envío
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.textContent = 'Enviando...';
     btn.disabled = true;
 
-    setTimeout(() => {
-      btn.textContent = 'Enviado';
-      btn.style.background = '#27ae60';
-      form.reset();
+    const fields = {
+      nombre: form.querySelector('[name="nombre"]').value,
+      email: form.querySelector('[name="email"]').value,
+      telefono: form.querySelector('[name="telefono"]').value,
+      mensaje: form.querySelector('[name="mensaje"]')?.value || ''
+    };
 
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        if (modal.classList.contains('modal--open')) closeModal();
-      }, 2000);
-    }, 1000);
+    sendLeadData(fields, 'Contacto - Mixcoac Residencial')
+      .then(results => {
+        const anyOk = results.some(r => r.status === 'fulfilled');
+        if (anyOk) {
+          btn.textContent = 'Enviado';
+          btn.style.background = '#27ae60';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+            if (modal.classList.contains('modal--open')) closeModal();
+          }, 2000);
+        } else {
+          throw new Error('all failed');
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Error al enviar';
+        btn.style.background = '#c0392b';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 2000);
+      });
   };
 
   document.getElementById('contactForm').addEventListener('submit', handleSubmit);
@@ -318,26 +361,46 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = 'Procesando...';
     btn.disabled = true;
 
-    setTimeout(() => {
-      // Trigger PDF download
-      const link = document.createElement('a');
-      link.href = 'assets/Greco_Booklet_Marzo_2026.pdf';
-      link.download = 'Mixcoac_Residencial_Brochure.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    const fields = {
+      nombre: form.querySelector('[name="nombre"]').value,
+      email: form.querySelector('[name="email"]').value,
+      telefono: form.querySelector('[name="telefono"]').value,
+      origen: 'Brochure'
+    };
 
-      btn.textContent = '¡Descarga iniciada!';
-      btn.style.background = '#27ae60';
-      form.reset();
+    sendLeadData(fields, 'Descarga Brochure - Mixcoac Residencial')
+      .then(results => {
+        const anyOk = results.some(r => r.status === 'fulfilled');
+        if (anyOk) {
+          const link = document.createElement('a');
+          link.href = 'assets/Greco_Booklet_Marzo_2026.pdf';
+          link.download = 'Mixcoac_Residencial_Brochure.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
 
-      setTimeout(() => {
-        btn.textContent = 'Descargar Brochure';
-        btn.style.background = '';
-        btn.disabled = false;
-        closeBrochureModal();
-      }, 2000);
-    }, 1000);
+          btn.textContent = '¡Descarga iniciada!';
+          btn.style.background = '#27ae60';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = 'Descargar Brochure';
+            btn.style.background = '';
+            btn.disabled = false;
+            closeBrochureModal();
+          }, 2000);
+        } else {
+          throw new Error('all failed');
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Error al enviar';
+        btn.style.background = '#c0392b';
+        setTimeout(() => {
+          btn.textContent = 'Descargar Brochure';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 2000);
+      });
   });
 
   // --- Configuracion slider ---
