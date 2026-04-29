@@ -273,8 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }),
       fetch(ZAPIER_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...fields, _subject: subject })
+        body: new URLSearchParams({ ...fields, _subject: subject })
       })
     ]);
   };
